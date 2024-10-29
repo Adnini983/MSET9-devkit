@@ -637,26 +637,26 @@ if not fs.ensurespace(16 * 1024 * 1024):
 clearScreen()
 print(f"MSET9 {VERSION} SETUP by zoogie, Aven, DannyAAM and thepikachugamer")
 print("What is your console model and version?")
-print("Old 3DS has two shoulder buttons (L and R)")
-print("New 3DS has four shoulder buttons (L, R, ZL, ZR)")
+print("CTR devkit has two shoulder buttons (L and R)")
+print("SNAKE devkit has four shoulder buttons (L, R, ZL, ZR)")
 
 print("\n-- Please type in a number then hit return --\n")
 
 consoleNames = {
-	1: "Old 3DS/2DS, 11.8.0 to 11.17.0",
-	2: "New 3DS/2DS, 11.8.0 to 11.17.0",
-	3: "Old 3DS/2DS, 11.4.0 to 11.7.0",
-	4: "New 3DS/2DS, 11.4.0 to 11.7.0"
+	1: "CTR/SPR/FTR, 0.28.0 to 0.35.0",
+	2: "SNAKE/CLOSER/JAN, 0.28.0 to 0.35.0",
+	3: "CTR/SPR/FTR, 0.24.74 to 0.27.0",
+	4: "SNAKE/CLOSER/JAN, 0.24.74 to 0.27.0"
 }
 
 print("Enter one of these four numbers!")
 for i in consoleNames:
 	print(f"Enter {i} for: {consoleNames[i]}")
 
-# print("Enter 1 for: Old 3DS/2DS, 11.8.0 to 11.17.0")
-# print("Enter 2 for: New 3DS/2DS, 11.8.0 to 11.17.0")
-# print("Enter 3 for: Old 3DS/2DS, 11.4.0 to 11.7.0")
-# print("Enter 4 for: New 3DS/2DS, 11.4.0 to 11.7.0")
+# print("Enter 1 for: CTR/SPR/FTR, 0.28.0 to 0.35.0")
+# print("Enter 2 for: SNAKE/CLOSER/JAN, 0.28.0 to 0.35.0")
+# print("Enter 3 for: CTR/SPR/FTR, 0.24.74 to 0.27.0")
+# print("Enter 4 for: SNAKE/CLOSER/JAN, 0.24.74 to 0.27.0")
 
 encodedID1s = {
 	1: "FFFFFFFA119907488546696508A10122054B984768465946C0AA171C4346034CA047B84700900A0871A0050899CE0408730064006D00630000900A0862003900",
@@ -897,7 +897,7 @@ writeProtectCheck()
 prinfo("Ensuring extracted files exist...")
 
 fileSanity = 0
-fileSanity += softcheck("boot9strap/boot9strap.firm", crc32=0x08129C1F)
+fileSanity += softcheck("boot9strap/boot9strap_dev.firm", crc32=0x209F4FF5)
 fileSanity += softcheck("boot.firm")
 fileSanity += softcheck("boot.3dsx")
 fileSanity += softcheck("b9")
